@@ -10,6 +10,8 @@ import {
   TouchableOpacity,
   TextInput
 } from 'react-native';
+import InputComentario from './InputComentario';
+import Likes from './Likes';
 
 const width = Dimensions.get('screen').width;
 
@@ -18,13 +20,8 @@ export default class Post extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      foto: { ...this.props.foto, likers: [{}, {}] },
-      valorComentario: ''
+      foto: { ...this.props.foto, likers: [{}, {}] }
     }
-  }
-
-  carregaIcone(likeada) {
-    return likeada ? require('../../resources/img/s2-checked.png') : require('../../resources/img/s2.png')
   }
 
   like() {
@@ -50,13 +47,6 @@ export default class Post extends Component {
     this.setState({ foto: fotoAtualizada });
   }
 
-  exibeLikes(likers) {
-    return likers.length > 0 &&
-      <Text style={styles.likes}>
-        {likers.length} {likers.length > 1 ? 'curtidas' : 'curtida'}
-      </Text>
-  }
-
   exibeLegenda(foto) {
     if (foto.comentario == '')
       return;
@@ -69,16 +59,16 @@ export default class Post extends Component {
     );
   }
 
-  adicionaComentario() {
-    if (this.state.valorComentario === '')
+  adicionaComentario(valorComentario, inputComentario) {
+    if (valorComentario === '')
       return;
 
     const novaLista = [
       ...this.state.foto.comentarios,
       {
-        id: this.state.valorComentario,
+        id: valorComentario,
         login: 'meuUsuario',
-        texto: this.state.valorComentario
+        texto: valorComentario
       }
     ];
 
@@ -87,8 +77,8 @@ export default class Post extends Component {
       comentarios: novaLista
     }
 
-    this.setState({ foto: fotoAtualizada, valorComentario: '' });
-    this.inputComentario.clear();
+    this.setState({ foto: fotoAtualizada });
+    inputComentario.clear();
   }
 
   render() {
@@ -102,10 +92,8 @@ export default class Post extends Component {
         </View>
         <Image source={{ uri: foto.urlFoto }} style={styles.foto} />
         <View style={styles.rodape}>
-          <TouchableOpacity onPress={this.like.bind(this)}>
-            <Image style={styles.botaoDeLike} source={this.carregaIcone(foto.likeada)} />
-          </TouchableOpacity>
-          {this.exibeLikes(foto.likers)}
+          <Likes likeCallback={this.like.bind(this)} foto={foto} />
+
           {this.exibeLegenda(foto)}
 
           <FlatList
@@ -117,16 +105,8 @@ export default class Post extends Component {
                 <Text>{item.texto}</Text>
               </View>
             } />
-          <View style={styles.novoComentario}>
-            <TextInput style={styles.input}
-              placeholder="Adicione um comentário..."
-              underlineColorAndroid='transparent'
-              ref={input => this.inputComentario = input}
-              onChangeText={texto => this.setState({ valorComentario: texto })} />
-            <TouchableOpacity onPress={this.adicionaComentario.bind(this)}>
-              <Image style={styles.icone} source={require('../../resources/img/send.png')} />
-            </TouchableOpacity>
-          </View>
+
+          <InputComentario comentarioCallback={this.adicionaComentario.bind(this)} />
         </View>
       </View>
     );
@@ -148,16 +128,8 @@ const styles = StyleSheet.create({
     width: width,
     height: width
   },
-  botaoDeLike: {
-    marginBottom: 10,
-    width: 40,
-    height: 40
-  },
   rodape: {
     margin: 10
-  },
-  likes: {
-    fontWeight: 'bold'
   },
   comentario: {
     flexDirection: 'row'
@@ -165,19 +137,5 @@ const styles = StyleSheet.create({
   tituloComentario: {
     fontWeight: 'bold',
     marginRight: 5
-  },
-  novoComentario: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    borderBottomWidth: 1,
-    borderBottomColor: '#ddd',
-  },
-  input: {
-    flex: 1,
-    height: 40
-  },
-  icone: {
-    width: 30,
-    height: 30
   }
 })
