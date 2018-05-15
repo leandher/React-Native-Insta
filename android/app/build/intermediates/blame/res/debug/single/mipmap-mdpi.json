@@ -1,5 +1,9 @@
 [
     {
+        "merged": "/Users/leandher/React-Native-Insta/android/app/build/intermediates/res/merged/debug/mipmap-mdpi/ic_launcher.png",
+        "source": "/Users/leandher/React-Native-Insta/android/app/src/main/res/mipmap-mdpi/ic_launcher.png"
+    },
+    {
         "merged": "/Users/leandher/react-native/InstaluraMobile/android/app/build/intermediates/res/merged/debug/mipmap-mdpi/ic_launcher.png",
         "source": "/Users/leandher/react-native/InstaluraMobile/android/app/src/main/res/mipmap-mdpi/ic_launcher.png"
     }
