@@ -1,5 +1,15 @@
-import { AppRegistry } from 'react-native';
-import Login from './src/screens/Login';
+import { Navigation } from 'react-native-navigation';
 import Feed from './src/components/Feed';
+import Login from './src/screens/Login';
 
-AppRegistry.registerComponent('InstaluraMobile', () => Login);
+export default () => {
+    Navigation.registerComponent('Login', () => Login);
+    Navigation.registerComponent('Feed', () => Feed);
+
+    Navigation.startSingleScreenApp({
+        screen: {
+            screen: 'Login',
+            title: 'Login'
+        }
+    });
+}

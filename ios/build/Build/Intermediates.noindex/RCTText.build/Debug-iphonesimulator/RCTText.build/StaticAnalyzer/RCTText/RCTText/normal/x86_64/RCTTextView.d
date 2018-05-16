@@ -1,0 +1,24 @@
+dependencies: \
+  /Users/leandher/React-Native-Insta/node_modules/react-native/Libraries/Text/Text/RCTTextView.m \
+  /Users/leandher/React-Native-Insta/node_modules/react-native/Libraries/Text/Text/RCTTextView.h \
+  /Users/leandher/React-Native-Insta/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTUtils.h \
+  /Users/leandher/React-Native-Insta/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTAssert.h \
+  /Users/leandher/React-Native-Insta/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTDefines.h \
+  /Users/leandher/React-Native-Insta/ios/build/Build/Products/Debug-iphonesimulator/include/React/UIView+React.h \
+  /Users/leandher/React-Native-Insta/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTComponent.h \
+  /Users/leandher/React-Native-Insta/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGEnums.h \
+  /Users/leandher/React-Native-Insta/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGMacros.h \
+  /Users/leandher/React-Native-Insta/node_modules/react-native/Libraries/Text/Text/RCTTextShadowView.h \
+  /Users/leandher/React-Native-Insta/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTShadowView.h \
+  /Users/leandher/React-Native-Insta/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTLayout.h \
+  /Users/leandher/React-Native-Insta/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/Yoga.h \
+  /Users/leandher/React-Native-Insta/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTRootView.h \
+  /Users/leandher/React-Native-Insta/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBridge.h \
+  /Users/leandher/React-Native-Insta/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBridgeDelegate.h \
+  /Users/leandher/React-Native-Insta/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTJavaScriptLoader.h \
+  /Users/leandher/React-Native-Insta/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBridgeModule.h \
+  /Users/leandher/React-Native-Insta/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTFrameUpdate.h \
+  /Users/leandher/React-Native-Insta/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTInvalidating.h \
+  /Users/leandher/React-Native-Insta/node_modules/react-native/Libraries/Text/BaseText/RCTBaseTextShadowView.h \
+  /Users/leandher/React-Native-Insta/node_modules/react-native/Libraries/Text/RCTTextAttributes.h \
+  /Users/leandher/React-Native-Insta/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTTextDecorationLineType.h

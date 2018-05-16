@@ -1,0 +1,8 @@
+dependencies: \
+  /Users/leandher/React-Native-Insta/node_modules/react-native/React/Base/RCTPlatform.m \
+  /Users/leandher/React-Native-Insta/node_modules/react-native/React/Base/RCTPlatform.h \
+  /Users/leandher/React-Native-Insta/node_modules/react-native/React/Base/RCTBridgeModule.h \
+  /Users/leandher/React-Native-Insta/node_modules/react-native/React/Base/RCTDefines.h \
+  /Users/leandher/React-Native-Insta/node_modules/react-native/React/Base/RCTUtils.h \
+  /Users/leandher/React-Native-Insta/node_modules/react-native/React/Base/RCTAssert.h \
+  /Users/leandher/React-Native-Insta/node_modules/react-native/React/Base/RCTVersion.h

@@ -1,0 +1,30 @@
+dependencies: \
+  /Users/leandher/React-Native-Insta/node_modules/react-native/Libraries/NativeAnimation/Nodes/RCTTrackingAnimatedNode.m \
+  /Users/leandher/React-Native-Insta/node_modules/react-native/Libraries/NativeAnimation/Nodes/RCTTrackingAnimatedNode.h \
+  /Users/leandher/React-Native-Insta/node_modules/react-native/Libraries/NativeAnimation/Nodes/RCTAnimatedNode.h \
+  /Users/leandher/React-Native-Insta/node_modules/react-native/Libraries/NativeAnimation/Nodes/RCTValueAnimatedNode.h \
+  /Users/leandher/React-Native-Insta/node_modules/react-native/Libraries/NativeAnimation/RCTNativeAnimatedNodesManager.h \
+  /Users/leandher/React-Native-Insta/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBridgeModule.h \
+  /Users/leandher/React-Native-Insta/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTDefines.h \
+  /Users/leandher/React-Native-Insta/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTUIManager.h \
+  /Users/leandher/React-Native-Insta/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBridge.h \
+  /Users/leandher/React-Native-Insta/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBridgeDelegate.h \
+  /Users/leandher/React-Native-Insta/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTJavaScriptLoader.h \
+  /Users/leandher/React-Native-Insta/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTFrameUpdate.h \
+  /Users/leandher/React-Native-Insta/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTInvalidating.h \
+  /Users/leandher/React-Native-Insta/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTRootView.h \
+  /Users/leandher/React-Native-Insta/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTViewManager.h \
+  /Users/leandher/React-Native-Insta/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTConvert.h \
+  /Users/leandher/React-Native-Insta/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTAnimationType.h \
+  /Users/leandher/React-Native-Insta/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBorderStyle.h \
+  /Users/leandher/React-Native-Insta/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTLog.h \
+  /Users/leandher/React-Native-Insta/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTAssert.h \
+  /Users/leandher/React-Native-Insta/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTUtils.h \
+  /Users/leandher/React-Native-Insta/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTPointerEvents.h \
+  /Users/leandher/React-Native-Insta/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTTextDecorationLineType.h \
+  /Users/leandher/React-Native-Insta/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/Yoga.h \
+  /Users/leandher/React-Native-Insta/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGEnums.h \
+  /Users/leandher/React-Native-Insta/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGMacros.h \
+  /Users/leandher/React-Native-Insta/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTEventDispatcher.h \
+  /Users/leandher/React-Native-Insta/ios/build/Build/Products/Debug-iphonesimulator/include/React/UIView+React.h \
+  /Users/leandher/React-Native-Insta/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTComponent.h

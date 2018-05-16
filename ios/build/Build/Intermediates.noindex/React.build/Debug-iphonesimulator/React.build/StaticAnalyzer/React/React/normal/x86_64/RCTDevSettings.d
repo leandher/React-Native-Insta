@@ -1,0 +1,23 @@
+dependencies: \
+  /Users/leandher/React-Native-Insta/node_modules/react-native/React/Modules/RCTDevSettings.mm \
+  /Users/leandher/React-Native-Insta/node_modules/react-native/React/Modules/RCTDevSettings.h \
+  /Users/leandher/React-Native-Insta/node_modules/react-native/React/Base/RCTBridge.h \
+  /Users/leandher/React-Native-Insta/node_modules/react-native/React/Base/RCTBridgeDelegate.h \
+  /Users/leandher/React-Native-Insta/node_modules/react-native/React/Base/RCTJavaScriptLoader.h \
+  /Users/leandher/React-Native-Insta/node_modules/react-native/React/Base/RCTDefines.h \
+  /Users/leandher/React-Native-Insta/node_modules/react-native/React/Base/RCTBridgeModule.h \
+  /Users/leandher/React-Native-Insta/node_modules/react-native/React/Base/RCTFrameUpdate.h \
+  /Users/leandher/React-Native-Insta/node_modules/react-native/React/Base/RCTInvalidating.h \
+  /Users/leandher/React-Native-Insta/ios/build/Build/Products/Debug-iphonesimulator/include/jschelpers/JavaScriptCore.h \
+  /Users/leandher/React-Native-Insta/ios/build/Build/Products/Debug-iphonesimulator/include/jschelpers/JSCWrapper.h \
+  /Users/leandher/React-Native-Insta/node_modules/react-native/React/Base/RCTBridge+Private.h \
+  /Users/leandher/React-Native-Insta/node_modules/react-native/React/Base/RCTEventDispatcher.h \
+  /Users/leandher/React-Native-Insta/node_modules/react-native/React/Modules/RCTJSCSamplingProfiler.h \
+  /Users/leandher/React-Native-Insta/node_modules/react-native/React/Base/RCTLog.h \
+  /Users/leandher/React-Native-Insta/node_modules/react-native/React/Base/RCTAssert.h \
+  /Users/leandher/React-Native-Insta/node_modules/react-native/React/Base/RCTUtils.h \
+  /Users/leandher/React-Native-Insta/node_modules/react-native/React/DevSupport/RCTPackagerClient.h \
+  /Users/leandher/React-Native-Insta/node_modules/react-native/React/Profiler/RCTProfile.h \
+  /Users/leandher/React-Native-Insta/node_modules/react-native/React/DevSupport/RCTPackagerConnection.h \
+  /Users/leandher/React-Native-Insta/node_modules/react-native/React/DevSupport/RCTInspectorDevServerHelper.h \
+  /Users/leandher/React-Native-Insta/node_modules/react-native/React/Inspector/RCTInspectorPackagerConnection.h

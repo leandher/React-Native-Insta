@@ -48,6 +48,11 @@ export default class Login extends Component {
                     ['usuario', this.state.usuario],
                     ['token', token]
                 ]);
+
+                this.props.navigator.resetTo({
+                    screen: 'Feed',
+                    title: 'Instalura',
+                })
             })
             .catch(error => this.setState({mensagem: error.message}));
     }
