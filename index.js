@@ -19,7 +19,9 @@ AsyncStorage.getItem('token')
   return {
     screen: 'Login',
     title: 'Login',
-
+    navigatorStyle: {
+      navBarHidden: true
+    }
   }; 
  })
  .then(screen => Navigation.startSingleScreenApp({screen}));

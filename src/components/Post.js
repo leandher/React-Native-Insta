@@ -45,7 +45,7 @@ export default class Post extends Component {
 
           <FlatList
             data={foto.comentarios}
-            keyExtractor={item => item.id}
+            keyExtractor={item => String(item.id)}
             renderItem={({ item }) =>
               <View style={styles.comentario}>
                 <Text style={styles.tituloComentario}>{item.login}</Text>

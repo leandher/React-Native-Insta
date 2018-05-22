@@ -7,6 +7,8 @@ import {
     AsyncStorage
 } from 'react-native';
 import Post from './Post';
+import InstaFetchService from '../services/InstaFetchService';
+import Notificacao from '../api/Notificacao';
 
 const width = Dimensions.get('screen').width;
 
@@ -20,8 +22,7 @@ export default class Feed extends Component {
     }
 
     componentDidMount() {
-        fetch('https://instalura-api.herokuapp.com/api/public/fotos/rafael')
-            .then(resposta => resposta.json())
+        InstaFetchService.get('/fotos')
             .then(json => this.setState({ fotos: json }));
     }
 
@@ -49,50 +50,69 @@ export default class Feed extends Component {
     }
 
     like(idFoto) {
+        const listaOriginal = this.state.fotos;
         const foto = this.buscaPorId(idFoto);
 
-        let novaLista = []
-        if (!foto.likeada) {
-            novaLista = [
-                ...foto.likers,
-                { login: 'meuUsuario' }
-            ]
-        } else {
-            novaLista = foto.likers.filter(liker => {
-                return liker.login !== 'meuUsuario'
-            })
-        }
+        AsyncStorage.getItem('usuario')
+            .then(usuarioLogado => {
 
-        const fotoAtualizada = {
-            ...foto,
-            likeada: !foto.likeada,
-            likers: novaLista
-        }
-        this.atualizaFotos(fotoAtualizada);
+                let novaLista = [];
+                if (!foto.likeada) {
+                    novaLista = [
+                        ...foto.likers,
+                        { login: usuarioLogado }
+                    ];
+                } else {
+                    novaLista = foto.likers.filter(liker => {
+                        return liker.login !== usuarioLogado
+                    });
+                }
+
+                return novaLista;
+            })
+            .then(novaLista => {
+                const fotoAtualizada = {
+                    ...foto,
+                    likeada: !foto.likeada,
+                    likers: novaLista
+                };
+
+                this.atualizaFotos(fotoAtualizada);
+            });
+            
+            InstaFetchService.post(`/fotos/${idFoto}/like`)
+            .catch(e => {
+                this.setState({fotos: listaOriginal})
+                Notificacao.exibe('Ops...', 'Algo de errado não está certo!');
+              });
     }
 
     adicionaComentario(idFoto, valorComentario, inputComentario) {
         if (valorComentario === '')
             return;
-
+        const listaOriginal = this.state.fotos;
         const foto = this.buscaPorId(idFoto);
+        const comentario = { 
+            texto: valorComentario
+          };
 
-        const novaLista = [
-            ...foto.comentarios,
-            {
-                id: valorComentario,
-                login: 'meuUsuario',
-                texto: valorComentario
-            }
-        ];
+        InstaFetchService.post(`/fotos/${idFoto}/comment`, comentario)
+            .then(comentario => [...foto.comentarios, comentario])
+            .then(novaLista => {
+                const fotoAtualizada = {
+                    ...foto,
+                    comentarios: novaLista
+                }
 
-        const fotoAtualizada = {
-            ...foto,
-            comentarios: novaLista
-        }
+                this.atualizaFotos(fotoAtualizada);
+                inputComentario.clear();
+            })
+            .catch(e => {
+                this.setState({fotos: listaOriginal})
+                Notificacao.exibe('Ops...', 'Algo de errado não está certo!');
+              });
 
-        this.atualizaFotos(fotoAtualizada);
-        inputComentario.clear();
+
     }
 
     render() {
