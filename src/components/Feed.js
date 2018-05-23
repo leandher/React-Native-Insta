@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {
     StyleSheet,
-    View,
+    ScrollView,
     Dimensions,
     FlatList,
     AsyncStorage
@@ -9,6 +9,7 @@ import {
 import Post from './Post';
 import InstaFetchService from '../services/InstaFetchService';
 import Notificacao from '../api/Notificacao';
+import HeaderUsuario from './HeaderUsuario';
 
 const width = Dimensions.get('screen').width;
 
@@ -22,8 +23,21 @@ export default class Feed extends Component {
     }
 
     componentDidMount() {
-        InstaFetchService.get('/fotos')
-            .then(json => this.setState({ fotos: json }));
+        this.props.navigator.setOnNavigatorEvent(evento => {
+            if (evento.id === 'willAppear')
+                this.load();
+        });
+    }
+
+    load() {
+        let uri = "/fotos";
+        if (this.props.usuario)
+            uri = `/public/fotos/${this.props.usuario}`
+
+
+        InstaFetchService.get(uri)
+            .then(json => this.setState({ fotos: json, status: 'NORMAL' }))
+            .catch(e => this.setState({ status: 'FALHA_CARREGAMENTO' }));
     }
 
     logout() {
@@ -79,12 +93,12 @@ export default class Feed extends Component {
 
                 this.atualizaFotos(fotoAtualizada);
             });
-            
-            InstaFetchService.post(`/fotos/${idFoto}/like`)
+
+        InstaFetchService.post(`/fotos/${idFoto}/like`)
             .catch(e => {
-                this.setState({fotos: listaOriginal})
+                this.setState({ fotos: listaOriginal })
                 Notificacao.exibe('Ops...', 'Algo de errado não está certo!');
-              });
+            });
     }
 
     adicionaComentario(idFoto, valorComentario, inputComentario) {
@@ -92,9 +106,9 @@ export default class Feed extends Component {
             return;
         const listaOriginal = this.state.fotos;
         const foto = this.buscaPorId(idFoto);
-        const comentario = { 
+        const comentario = {
             texto: valorComentario
-          };
+        };
 
         InstaFetchService.post(`/fotos/${idFoto}/comment`, comentario)
             .then(comentario => [...foto.comentarios, comentario])
@@ -108,23 +122,47 @@ export default class Feed extends Component {
                 inputComentario.clear();
             })
             .catch(e => {
-                this.setState({fotos: listaOriginal})
+                this.setState({ fotos: listaOriginal })
                 Notificacao.exibe('Ops...', 'Algo de errado não está certo!');
-              });
+            });
 
 
     }
 
+    verPerfilUsuario(idFoto) {
+        const foto = this.buscaPorId(idFoto);
+
+        this.props.navigator.push({
+            screen: 'PerfilUsuario',
+            backButtonTitle: '',
+            title: foto.loginUsuario,
+            passProps: {
+                usuario: foto.loginUsuario,
+                fotoDePerfil: foto.urlPerfil,
+                posts: this.state.fotos.length
+            }
+        })
+    }
+
+    exibeHeader() {
+        if (this.props.usuario)
+            return <HeaderUsuario {...this.props} posts={this.state.fotos.length} />;
+    }
+
     render() {
         return (
-            <FlatList data={this.state.fotos}
-                keyExtractor={item => String(item.id)}
-                renderItem={({ item }) =>
-                    <Post foto={item}
-                        likeCallback={this.like.bind(this)}
-                        comentarioCallback={this.adicionaComentario.bind(this)} />
-                }
-            />
+            <ScrollView>
+                {this.exibeHeader()}
+                <FlatList data={this.state.fotos}
+                    keyExtractor={item => String(item.id)}
+                    renderItem={({ item }) =>
+                        <Post foto={item}
+                            likeCallback={this.like.bind(this)}
+                            comentarioCallback={this.adicionaComentario.bind(this)}
+                            verPerfilCallback={this.verPerfilUsuario.bind(this)} />
+                    }
+                />
+            </ScrollView>
         );
     }
 }

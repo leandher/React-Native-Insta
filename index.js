@@ -5,23 +5,24 @@ import { AsyncStorage } from 'react-native';
 
 Navigation.registerComponent('Login', () => Login);
 Navigation.registerComponent('Feed', () => Feed);
+Navigation.registerComponent('PerfilUsuario', () => Feed);
 
 AsyncStorage.getItem('token')
   .then(token => {
     console.warn(token)
-    if(token) {
+    if (token) {
       return {
         screen: 'Feed',
         title: 'Instalura'
-    };
-  }
-
-  return {
-    screen: 'Login',
-    title: 'Login',
-    navigatorStyle: {
-      navBarHidden: true
+      };
     }
-  }; 
- })
- .then(screen => Navigation.startSingleScreenApp({screen}));
+
+    return {
+      screen: 'Login',
+      title: 'Login',
+      navigatorStyle: {
+        navBarHidden: true
+      }
+    };
+  })
+  .then(screen => Navigation.startSingleScreenApp({ screen }));
